@@ -42,7 +42,7 @@
       "notes": "Milk chocolate, red apple, balanced",
       "price": "$15 / 250g",
       "pack": "250g bags",
-      "available": false,
-    },
+      "available": false
+    }
   ]
 }
