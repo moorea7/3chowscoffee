@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://love-coffee.com/sitemap.xml

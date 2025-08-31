@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Chows Coffee Company</title>
+  <meta name="description" content="Small-batch roasted coffee from Three Chows Coffee Company. View current offerings and pay via Venmo.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:title" content="Three Chows Coffee Company">
+  <meta property="og:description" content="Small-batch roasted coffee, crafted with care.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://love-coffee.com/">
+  <meta property="og:image" content="https://love-coffee.com/images/social-card.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Three Chows Coffee Company",
+    "url": "https://love-coffee.com/",
+    "image": "https://love-coffee.com/images/social-card.png",
+    "servesCuisine": "Coffee",
+    "paymentAccepted": "Venmo",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+  <!-- Header / Hero -->
+  <header class="hero">
+    <img src="images/logo.png" alt="Three Chows Coffee Logo" class="logo" onerror="this.style.display='none'">
+    <h1>Three Chows Coffee Company</h1>
+    <p class="tagline">Small-batch roasted coffee, crafted with care.</p>
+  </header>
+
+  <!-- Menu Section -->
+  <main class="wrap">
+    <section id="menu">
+      <h2>Available Coffees</h2>
+      <div id="coffee-list" class="grid"></div>
+      <p id="empty-state" class="muted" hidden>No coffees are listed as available right now — check back soon!</p>
+    </section>
+
+    <section id="order">
+      <h2>How to Order</h2>
+      <ol>
+        <li>Choose your coffee(s) from the list above.</li>
+        <li>Send payment on Venmo with the coffee name and quantity in the note.</li>
+      </ol>
+      <div class="venmo">
+        <a id="venmo-link" class="venmo-button" href="https://venmo.com/YOUR-VENMO-USERNAME" target="_blank" rel="noopener">Pay on Venmo</a>
+        <img src="images/venmo-qr.png" alt="Venmo QR Code" class="venmo-qr" onerror="this.style.display='none'">
+        <p class="muted">Tip: Include grind preference (whole bean or grind setting) in the note.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hello@love-coffee.com">hello@love-coffee.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/threechowscoffee" target="_blank" rel="noopener">@threechowscoffee</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Three Chows Coffee Company • <a href="https://love-coffee.com/" rel="noopener">Love-Coffee.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

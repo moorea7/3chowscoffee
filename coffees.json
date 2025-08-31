@@ -1,0 +1,57 @@
+{
+  "updated": "2025-08-31",
+  "venmo": {
+    "username": "Anthony-Moore-298",
+    "url": "https://venmo.com/u/Anthony-Moore-298"
+  },
+  "coffees": [
+    {
+      "name": "Sumatra Bener Meriah",
+      "roast": "Full City+",
+      "origin": "Aceh, Indonesia",
+      "notes": "Earthy, dark chocolate, cedar",
+      "price": "$18 / 12oz",
+      "pack": "12oz bags",
+      "grind": "Whole bean or grind to order",
+      "available": true
+    },
+    {
+      "name": "Mysore Muzzle Loader Espresso Blend",
+      "roast": "Full City",
+      "origin": "India-heavy blend",
+      "notes": "Spiced cocoa, dried fruit, heavy body",
+      "price": "$20 / 12oz",
+      "pack": "12oz bags",
+      "grind": "Whole bean or grind to order",
+      "available": true
+    },
+    {
+      "name": "Peruvian Pacha Glow",
+      "roast": "Medium",
+      "origin": "Peru",
+      "notes": "Citrus, caramel, smooth finish",
+      "price": "$17 / 12oz",
+      "pack": "12oz bags",
+      "grind": "Whole bean or grind to order",
+      "available": true
+    },
+    {
+      "name": "Colombia Antioquia Amagá Supremo",
+      "roast": "Medium-Dark",
+      "origin": "Colombia",
+      "notes": "Milk chocolate, red apple, balanced",
+      "price": "$18 / 12oz",
+      "available": false,
+      "pack": "250g bag"
+    },
+    {
+      "name": "Java Ijen",
+      "roast": "Medium",
+      "origin": "East Java, Indonesia",
+      "notes": "Cocoa nib, brown sugar, mild spice",
+      "price": "$18 / 12oz",
+      "available": false,
+      "pack": "250g bag"
+    }
+  ]
+}
