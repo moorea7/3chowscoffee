@@ -10,8 +10,8 @@
       "roast": "Full City+",
       "origin": "Aceh, Indonesia",
       "notes": "Earthy, dark chocolate, cedar",
-      "price": "$18 / 12oz",
-      "pack": "12oz bags",
+      "price": "$15 / 250g",
+      "pack": "250g bags",
       "grind": "Whole bean or grind to order",
       "available": true
     },
@@ -20,8 +20,8 @@
       "roast": "Full City",
       "origin": "India-heavy blend",
       "notes": "Spiced cocoa, dried fruit, heavy body",
-      "price": "$20 / 12oz",
-      "pack": "12oz bags",
+      "price": "$15 / 250g",
+      "pack": "250g bags",
       "grind": "Whole bean or grind to order",
       "available": true
     },
@@ -30,8 +30,8 @@
       "roast": "Medium",
       "origin": "Peru",
       "notes": "Citrus, caramel, smooth finish",
-      "price": "$17 / 12oz",
-      "pack": "12oz bags",
+      "price": "$15 / 250g",
+      "pack": "250g bags",
       "grind": "Whole bean or grind to order",
       "available": true
     },
@@ -40,18 +40,9 @@
       "roast": "Medium-Dark",
       "origin": "Colombia",
       "notes": "Milk chocolate, red apple, balanced",
-      "price": "$18 / 12oz",
+      "price": "$15 / 250g",
+      "pack": "250g bags",
       "available": false,
-      "pack": "250g bag"
     },
-    {
-      "name": "Java Ijen",
-      "roast": "Medium",
-      "origin": "East Java, Indonesia",
-      "notes": "Cocoa nib, brown sugar, mild spice",
-      "price": "$18 / 12oz",
-      "available": false,
-      "pack": "250g bag"
-    }
   ]
 }
