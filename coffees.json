@@ -5,65 +5,10 @@
   },
   "coffees": [
     {
-      "name": "Sumatra Bener Meriah",
-      "origin": "Aceh, Indonesia",
-      "roast": "Full City+",
-      "notes": "Earthy, dark chocolate, cedar",
-      "category": "Single Origin",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
-    },
-    {
-      "name": "Mysore Nuggets",
-      "origin": "India, Karnataka",
-      "roast": "Full City",
-      "notes": "Spicy chocolate notes, syrupy body; prized Indian arabica.",
-      "category": "Single Origin",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
-    },
-    {
-      "name": "Mysore Muzzle Loader Espresso Blend",
-      "origin": "India-forward espresso blend",
-      "roast": "Full City",
-      "notes": "Spiced cocoa, dried fruit, heavy body",
-      "category": "Blend",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
-    },
-    {
-      "name": "Colombia Huila",
-      "origin": "Huila, Colombia",
-      "roast": "City+",
-      "notes": "Caramel, citrus, clean finish",
-      "category": "Single Origin",
-      "available": false,
-      "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
-    },
-    {
       "name": "Colombia Antioquia Amaga Supremo",
-      "origin": "Antioquia, Colombia",
+      "origin": "Colombia",
       "roast": "City+",
       "notes": "Sweet, nutty, and smooth cup; medium body and acidity.",
-      "category": "Single Origin",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
-    },
-    {
-      "name": "Peruvian Pacha Glow",
-      "origin": "Peru",
-      "roast": "City+",
-      "notes": "Citrus, caramel, smooth finish",
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
@@ -82,15 +27,15 @@
       "grind": "Whole bean or grind to order"
     },
     {
-      "name": "Colombia Decaf (Royal Select MWP)",
-      "available": true,
+      "name": "Colombia Huila",
+      "origin": "Colombia",
+      "roast": "City+",
+      "notes": "Caramel, citrus, clean finish",
+      "category": "Single Origin",
+      "available": false,
       "pack": "250g bags",
       "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order",
-      "category": "Single Origin",
-      "origin": "Colombia (Mountain Water Process)",
-      "roast": "Full City",
-      "notes": "Milk chocolate, toasted almond, gentle sweetness"
+      "grind": "Whole bean or grind to order"
     },
     {
       "name": "Guatemala Huehuetenango (HHT)",
@@ -99,9 +44,53 @@
       "price": "$15 / 250g",
       "grind": "Whole bean or grind to order",
       "category": "Single Origin",
-      "origin": "Huehuetenango, Guatemala",
+      "origin": "Guatemala",
       "roast": "City+",
       "notes": "Caramel, apple, baking spice; balanced acidity"
+    },
+    {
+      "name": "Mysore Nuggets",
+      "origin": "India",
+      "roast": "Full City",
+      "notes": "Spicy chocolate notes, syrupy body; prized Indian arabica.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Sumatra Bener Meriah",
+      "origin": "Indonesia",
+      "roast": "Full City+",
+      "notes": "Earthy, dark chocolate, cedar",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Peruvian Pacha Glow",
+      "origin": "Peru",
+      "roast": "City+",
+      "notes": "Citrus, caramel, smooth finish",
+      "category": "Single Origin",
+      "available": false,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Mysore Muzzle Loader Espresso Blend",
+      "origin": "Blend of Multiple Origins",
+      "roast": "Full City",
+      "notes": "Spiced cocoa, dried fruit, heavy body",
+      "category": "Blend",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
     }
   ]
 }
