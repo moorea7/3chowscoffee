@@ -12,8 +12,7 @@
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "price": "$15 / 250g"
     },
     {
       "name": "Colombia Decaf Royal Select MWP",
@@ -23,8 +22,7 @@
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "price": "$15 / 250g"
     },
     {
       "name": "Colombia Huila",
@@ -34,15 +32,13 @@
       "category": "Single Origin",
       "available": false,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "price": "$15 / 250g"
     },
     {
       "name": "Guatemala Huehuetenango (HHT)",
       "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order",
       "category": "Single Origin",
       "origin": "Guatemala",
       "roast": "City+",
@@ -56,8 +52,7 @@
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "price": "$15 / 250g"
     },
     {
       "name": "Sumatra Bener Meriah",
@@ -67,8 +62,7 @@
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "price": "$15 / 250g"
     },
     {
       "name": "Peruvian Pacha Glow",
@@ -78,8 +72,18 @@
       "category": "Single Origin",
       "available": false,
       "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Vietnam Lam Dong Duc Trong Mill Washed",
+      "available": true,
+      "pack": "250g bags",
       "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "category": "Single Origin",
+      "origin": "Vietnam",
+      "roast": "Full City",
+      "available": true,
+      "notes": "Semi-sweet chocolate, nuts, soft fruit, peppery spice"
     },
     {
       "name": "Mysore Muzzle Loader Espresso Blend",
@@ -89,8 +93,7 @@
       "category": "Blend",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "grind": "Whole bean or grind to order"
+      "price": "$15 / 250g"
     }
   ]
 }
