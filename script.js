@@ -1,28 +1,59 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+const YEAR = new Date().getFullYear();
+document.getElementById('year').textContent = YEAR;
+document.getElementById('foot-year').textContent = YEAR;
 
-async function loadCoffees(){
+const filterChips = [...document.querySelectorAll('.chip')];
+let coffeesCache = [];
+
+async function init(){
   try{
-    const res = await fetch('coffees.json');
+    const res = await fetch('coffees.json', {cache:'no-store'});
     const data = await res.json();
-    renderCoffees(data.coffees);
-  } catch(err){ console.error(err); }
+    coffeesCache = (data.coffees || []).filter(c => c.available !== false);
+    renderCoffees(coffeesCache);
+    const venmo = data.venmo || {};
+    const url = venmo.url || (venmo.username ? `https://venmo.com/u/${venmo.username.replace(/^@/, '')}` : null);
+    if(url){
+      ['venmo-link','venmo-link-hero','venmo-link-sticky'].forEach(id => {
+        const a = document.getElementById(id);
+        if(a) a.href = url;
+      });
+    }
+  }catch(e){ console.error(e); }
 }
+init();
 
 function renderCoffees(list){
   const container = document.getElementById('coffee-list');
   const empty = document.getElementById('empty-state');
-  if(!list || list.length === 0){ empty.hidden = false; return; }
+  container.innerHTML = '';
+  if(!list.length){ empty.hidden = false; return; }
   empty.hidden = true;
-  list.forEach(c => {
-    const card = document.createElement('div');
+  document.getElementById('coffee-count').textContent = String(list.length);
+  for(const c of list){
+    const card = document.createElement('article');
     card.className = 'card';
-    card.innerHTML = `<h3>${c.name}</h3>
-      <div>${c.origin || ''}</div>
-      <div>${c.roast || ''}</div>
-      <div>${c.notes || ''}</div>
-      <div class='price'>${c.price || '$15 / 250g'}</div>`;
+    const pack = c.pack || '250g bag';
+    const price = c.price || '$15 / 250g';
+    const roast = c.roast ? `<span class="badge">${c.roast}</span>` : '';
+    const origin = c.origin ? `<span class="origin">• ${c.origin}</span>` : '';
+    card.innerHTML = `
+      <h3>${c.name}</h3>
+      <div class="meta">${roast} ${origin}</div>
+      ${c.notes ? `<div class="notes">${c.notes}</div>` : ''}
+      <div class="dim">${pack}${c.grind ? ' • ' + c.grind : ''}</div>
+      <div class="price">${price}</div>
+    `;
     container.appendChild(card);
-  });
+  }
 }
 
-loadCoffees();
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filterChips.forEach(c => c.setAttribute('aria-pressed', String(c===chip)));
+    const key = chip.dataset.filter;
+    if(key === 'All'){ renderCoffees(coffeesCache); return; }
+    const filtered = coffeesCache.filter(c => (c.roast || '').includes(key));
+    renderCoffees(filtered);
+  });
+});
