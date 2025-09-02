@@ -1,48 +1,107 @@
 {
-  "updated": "2025-08-31",
+  "updated": null,
   "venmo": {
-    "username": "Anthony-Moore-298",
     "url": "https://venmo.com/u/Anthony-Moore-298"
   },
   "coffees": [
     {
       "name": "Sumatra Bener Meriah",
-      "roast": "Full City+",
       "origin": "Aceh, Indonesia",
+      "roast": "Full City+",
       "notes": "Earthy, dark chocolate, cedar",
-      "price": "$15 / 250g",
+      "category": "Single Origin",
+      "available": true,
       "pack": "250g bags",
-      "grind": "Whole bean or grind to order",
-      "available": true
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Mysore Nuggets",
+      "origin": "India, Karnataka",
+      "roast": "Full City",
+      "notes": "Spicy chocolate notes, syrupy body; prized Indian arabica.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
     },
     {
       "name": "Mysore Muzzle Loader Espresso Blend",
+      "origin": "India-forward espresso blend",
       "roast": "Full City",
-      "origin": "India-heavy blend",
       "notes": "Spiced cocoa, dried fruit, heavy body",
-      "price": "$15 / 250g",
+      "category": "Blend",
+      "available": true,
       "pack": "250g bags",
-      "grind": "Whole bean or grind to order",
-      "available": true
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Colombia Huila",
+      "origin": "Huila, Colombia",
+      "roast": "City+",
+      "notes": "Caramel, citrus, clean finish",
+      "category": "Single Origin",
+      "available": false,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Colombia Antioquia Amaga Supremo",
+      "origin": "Antioquia, Colombia",
+      "roast": "City+",
+      "notes": "Sweet, nutty, and smooth cup; medium body and acidity.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
     },
     {
       "name": "Peruvian Pacha Glow",
-      "roast": "Medium",
       "origin": "Peru",
+      "roast": "City+",
       "notes": "Citrus, caramel, smooth finish",
-      "price": "$15 / 250g",
+      "category": "Single Origin",
+      "available": true,
       "pack": "250g bags",
-      "grind": "Whole bean or grind to order",
-      "available": true
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
     },
     {
-      "name": "Colombia Antioquia Amagá Supremo",
-      "roast": "Medium-Dark",
+      "name": "Colombia Decaf Royal Select MWP",
       "origin": "Colombia",
-      "notes": "Milk chocolate, red apple, balanced",
-      "price": "$15 / 250g",
+      "roast": "Full City",
+      "notes": "Decaf with chocolatey notes; Mountain Water Process retains flavor.",
+      "category": "Single Origin",
+      "available": true,
       "pack": "250g bags",
-      "available": false
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order"
+    },
+    {
+      "name": "Colombia Decaf (Royal Select MWP)",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order",
+      "category": "Single Origin",
+      "origin": "Colombia (Mountain Water Process)",
+      "roast": "Full City",
+      "notes": "Milk chocolate, toasted almond, gentle sweetness"
+    },
+    {
+      "name": "Guatemala Huehuetenango (HHT)",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g",
+      "grind": "Whole bean or grind to order",
+      "category": "Single Origin",
+      "origin": "Huehuetenango, Guatemala",
+      "roast": "City+",
+      "notes": "Caramel, apple, baking spice; balanced acidity"
     }
   ]
 }

@@ -2,24 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Three Chows Coffee Company</title>
-  <meta name="description" content="Small-batch roasted coffee from Three Chows Coffee Company. View current offerings and pay via Venmo." />
   <link rel="icon" href="images/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#menu">Skip to content</a>
-  <header class="topbar">
-    <div class="container">
-      <div class="brand">
-        <img src="images/logo.png" alt="Three Chows Coffee Company logo" class="brand-logo" onerror="this.style.display='none'">
-        <div class="brand-text">
-          <div class="brand-title">THREE CHOWS COFFEE COMPANY</div>
-          <div class="brand-tagline">Small-batch roasted coffee, crafted with care.</div>
-        </div>
+<header class="site-header">
+    <div class="header-inner column">
+      <div class="header-top">
+        <img src="images/logo.png" alt="Three Chows Coffee Company logo" class="logo" onerror="this.style.display='none'">
+        <div class="site-name">Three Chows Coffee Company</div>
       </div>
-      <nav class="nav">
+      <nav class="nav-links">
         <a href="#menu">Coffees</a>
         <a href="#order">How to Order</a>
         <a href="#shipping">Shipping</a>
@@ -30,38 +26,32 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h1>Freshly roasted, thoughtfully blended.</h1>
-        <p>Explore our current lineup below. We roast in small batches and keep it simple: choose your beans and pay via Venmo.</p>
-        <a id="venmo-link-hero" class="button" href="https://venmo.com/u/Anthony-Moore-298" target="_blank" rel="noopener">Pay on Venmo</a>
-      </div>
-      <div class="hero-card">
-        <div class="stat">
-          <div class="stat-number" id="year">2025</div>
-          <div class="stat-label">Since</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number" id="coffee-count">—</div>
-          <div class="stat-label">Coffees listed</div>
-        </div>
-      </div>
+  <section class="hero hero-compact">
+    <div class="container">
+      <p class="tagline">Small-batch roasted coffee, crafted with care.</p>
     </div>
   </section>
 
   <main id="menu" class="container section">
-    <div class="section-head">
+    <div class="section-head centered">
       <h2>Available Coffees</h2>
+      <div class="filters cat-filters">
+        <button class="chip chip-cat" data-cat="All" aria-pressed="true">All</button>
+        <button class="chip chip-cat" data-cat="Single Origin">Single Origin</button>
+        <button class="chip chip-cat" data-cat="Blend">Blends</button>
+      </div>
       <div class="filters">
-        <button class="chip" data-filter="All" aria-pressed="true">All</button>
-        <button class="chip" data-filter="City">City</button>
-        <button class="chip" data-filter="City+">City+</button>
-        <button class="chip" data-filter="Full City">Full City</button>
-        <button class="chip" data-filter="Full City+">Full City+</button>
+        <button class="chip chip-roast" data-filter="All" aria-pressed="true">All</button>
+        <button class="chip chip-roast" data-filter="City">City</button>
+        <button class="chip chip-roast" data-filter="City+">City+</button>
+        <button class="chip chip-roast" data-filter="Full City">Full City</button>
+        <button class="chip chip-roast" data-filter="Full City+">Full City+</button>
       </div>
     </div>
-    <div id="coffee-list" class="grid"></div>
+    <div class="section-head centered subhead" id="so-head" hidden><h3>Single Origin</h3></div>
+    <div id="coffee-list-so" class="grid"></div>
+    <div class="section-head centered subhead" id="blend-head" hidden><h3>Blends</h3></div>
+    <div id="coffee-list-blend" class="grid"></div>
     <p id="empty-state" class="muted" hidden>No coffees are listed as available right now — check back soon!</p>
   </main>
 
@@ -72,70 +62,48 @@
         <p><strong>Orders accepted via email, text, WhatsApp, Signal or Facebook Messenger.</strong> Please message me via your preferred platform. <em>Please wait for my confirmation before sending payment</em> so I can confirm availability.</p>
       </div>
       <div class="order-card">
-        <img src="images/venmo-qr.png" alt="Venmo QR Code" class="venmo-qr" onerror="this.style.display='none'">
-        <a id="venmo-link" class="button button-outline" href="https://venmo.com/u/Anthony-Moore-298" target="_blank" rel="noopener">Open Venmo</a>
+        <img src="images/venmo-qr.png" alt="Venmo QR Code" class="venmo-qr">
+        <a id="venmo-link" class="button" href="https://venmo.com/u/Anthony-Moore-298" target="_blank">Pay on Venmo</a>
         <div class="venmo-note muted">@Anthony-Moore-298</div>
       </div>
     </div>
   </section>
 
   <section id="shipping" class="container section note-section">
-    <div class="note-sidebar">
-      <h2>Shipping</h2>
-    </div>
-    <div class="note-content">
-      <div class="note-card">
-        <p>I will ship on request. <strong>2 bags of coffee fit in a USPS Priority Flat Rate Box</strong> and costs <strong>$11.70</strong> at current rates. Add this to the Venmo payment.</p>
-      </div>
-    </div>
+    <div class="note-sidebar"><h2>Shipping</h2></div>
+    <div class="note-content"><div class="note-card">
+      <p>I will ship on request. <strong>2 bags of coffee fit in a USPS Priority Flat Rate Box</strong> and costs <strong>$11.70</strong> at current rates. Add this to the Venmo payment.</p>
+    </div></div>
   </section>
 
   <section id="grinding" class="container section note-section">
-    <div class="note-sidebar">
-      <h2>Grinding</h2>
-    </div>
-    <div class="note-content">
-      <div class="note-card">
-        <p><strong>All coffees are whole bean.</strong> I can grind beans on request but I strongly recommend grinding at home for best flavor. If you do need me to grind your coffee, please specify how you would like it ground.</p>
-      </div>
-    </div>
+    <div class="note-sidebar"><h2>Grinding</h2></div>
+    <div class="note-content"><div class="note-card">
+      <p><strong>All coffees are whole bean.</strong> I can grind beans on request but I strongly recommend grinding at home for best flavor. If you do need me to grind your coffee, please specify how you would like it ground.</p>
+    </div></div>
   </section>
 
   <section id="about" class="container section note-section">
-    <div class="note-sidebar">
-      <h2>About This Business</h2>
-    </div>
-    <div class="note-content">
-      <div class="note-card">
-        <p>I am a small sole proprietor operating this as a fun venture. You are receiving a custom home roast coffee. I keep markup to a minimum and only sell to friends and family. If you wish to order from me I require that we already know each other, or a personal introduction from a mutual friend. Moneys collected go towards coffee, operating costs, and equipment maintenance. Tips are welcome, but never expected.</p>
-      </div>
-    </div>
+    <div class="note-sidebar"><h2>About This Business</h2></div>
+    <div class="note-content"><div class="note-card">
+      <p>I am a small sole proprietor operating this as a fun venture. You are receiving a custom home roast coffee. I keep markup to a minimum and only sell to friends and family. If you wish to order from me I require that we already know each other, or a personal introduction from a mutual friend. Moneys collected go towards coffee, operating costs, and equipment maintenance. Tips are welcome, but never expected.</p>
+    </div></div>
   </section>
 
   <section id="contact" class="container section">
     <h2>Contact</h2>
     <div class="contact-grid">
-      <div>
-        <div>Email</div>
-        <a href="mailto:hello@love-coffee.com">hello@love-coffee.com</a>
-      </div>
-      <div>
-        <div>Instagram</div>
-        <a href="https://instagram.com/threechowscoffee" target="_blank" rel="noopener">@threechowscoffee</a>
-      </div>
+      <div><div>Email</div><a href="mailto:hello@love-coffee.com">hello@love-coffee.com</a></div>
+      <div><div>Instagram</div><a href="https://instagram.com/threechowscoffee" target="_blank">@threechowscoffee</a></div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container foot">
-      <div>© <span id="foot-year"></span> Three Chows Coffee Company • <a href="https://love-coffee.com/" rel="noopener">Love-Coffee.com</a></div>
+      <div>© <span id="foot-year"></span> Three Chows Coffee Company • <a href="https://love-coffee.com/">Love-Coffee.com</a></div>
       <a class="to-top" href="#menu" aria-label="Back to top">↑</a>
     </div>
   </footer>
-
-  <div class="sticky-cta" role="region" aria-label="Quick Venmo">
-    <a id="venmo-link-sticky" href="https://venmo.com/u/Anthony-Moore-298" target="_blank" rel="noopener" class="sticky-btn">Pay on Venmo</a>
-  </div>
 
   <script src="script.js"></script>
 </body>
