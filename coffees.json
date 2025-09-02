@@ -65,12 +65,12 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Peruvian Pacha Glow",
+      "name": "Peruvian Quile Smile",
       "origin": "Peru",
       "roast": "City+",
-      "notes": "Citrus, caramel, smooth finish",
+      "notes": "Cane sugar, honey, vanilla",
       "category": "Single Origin",
-      "available": false,
+      "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
     },
