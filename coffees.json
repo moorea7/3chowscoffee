@@ -1,3 +1,4 @@
+
 {
   "updated": null,
   "venmo": {
@@ -35,14 +36,24 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Guatemala Huehuetenango (HHT)",
+      "name": "Colombia Supremo EP Huila",
+      "origin": "Colombia",
+      "roast": "City+",
+      "notes": "Balanced acidity, delicate medium body; tart fruit sweetness with bittersweet dark cocoa finish; caramel, milk chocolate, cherry notes.",
+      "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "category": "Single Origin",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Guatemala Huehuetenango (HHT)",
       "origin": "Guatemala",
       "roast": "City+",
-      "notes": "Caramel, apple, baking spice; balanced acidity"
+      "notes": "Caramel, apple, baking spice; balanced acidity",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
     },
     {
       "name": "Mysore Nuggets",
@@ -65,6 +76,16 @@
       "price": "$15 / 250g"
     },
     {
+      "name": "Sumatra Mandheling G1 Aceh",
+      "origin": "Indonesia",
+      "roast": "Full City+",
+      "notes": "Earthy, chocolate, cedar, sweet tobacco, spice; creamy/syrupy full body with mild to low acidity; toffee, lemongrass, dried fruit nuances.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
       "name": "Peruvian Quile Smile",
       "origin": "Peru",
       "roast": "City+",
@@ -75,15 +96,24 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Vietnam Lam Dong Duc Trong Mill Washed",
+      "name": "Peru Finca La Esperanza RFA",
+      "origin": "Peru",
+      "roast": "Full City",
+      "notes": "Chocolate & cherry, toasty, nutty sweet aroma; citrus, malt, pine, semi-sweet chocolate finish; full body, low acidity, balanced and lingering; baker’s cocoa, tangerine, peach, almond finish.",
+      "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
-      "price": "$15 / 250g",
-      "category": "Single Origin",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Vietnam Lam Dong Duc Trong Mill Washed",
       "origin": "Vietnam",
       "roast": "Full City",
+      "notes": "Semi-sweet chocolate, nuts, soft fruit, peppery spice",
+      "category": "Single Origin",
       "available": true,
-      "notes": "Semi-sweet chocolate, nuts, soft fruit, peppery spice"
+      "pack": "250g bags",
+      "price": "$15 / 250g"
     },
     {
       "name": "Mysore Muzzle Loader Espresso Blend",
