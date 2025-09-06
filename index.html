@@ -34,6 +34,11 @@
   <main id="menu" class="container section">
     <div class="section-head centered">
       <h2>Available Coffees</h2>
+      <div class="filters avail-filters">
+        <button class="chip chip-avail" data-avail="All" aria-pressed="true">All</button>
+        <button class="chip chip-avail" data-avail="Ready Now">Ready Now</button>
+        <button class="chip chip-avail" data-avail="Ready to Roast">Ready to Roast</button>
+      </div>
       <div class="filters cat-filters">
         <button class="chip chip-cat" data-cat="All" aria-pressed="true">All</button>
         <button class="chip chip-cat" data-cat="Single Origin">Single Origin</button>
@@ -49,7 +54,7 @@
     </div>
     
     <div class="section-head centered subhead" id="ready-now-head">
-      <h3>Ready Now</h3>
+      <h2>Ready Now</h3>
       <p class="muted">The following coffees are roasted as indicated and are available now for faster service</p>
     </div>
     <div id="ready-now-list" class="grid"></div>
@@ -59,7 +64,7 @@
       <h2>Ready to Roast</h2>
       <p class="muted">The following coffees are available for roasting to order. Please allow 7-10 days after roasting date before grinding and drinking any coffee for optimal flavor!</p>
     </div>
-
+    
 
 
 <div class="section-head centered subhead" id="so-head" hidden><h3>Single Origin</h3></div>
