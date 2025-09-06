@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "Mysore Muzzle Loader Espresso Blend",
+    "RoastLevel": "Full City+",
+    "PackageSize": "250g",
+    "Price": 15,
+    "TastingNotes": "Bold and syrupy with deep cocoa, roasted nut, and warm spice notes, crafted for a rich and crema-heavy espresso shot.",
+    "QuantityAvailable": 2,
+    "DateRoasted": "2025-08-24"
+  },
+  {
+    "Name": "Colombia Royal Select MWP Decaf",
+    "RoastLevel": "City+",
+    "PackageSize": "250g",
+    "Price": 15,
+    "TastingNotes": "Smooth and mellow with notes of milk chocolate, toasted nuts, and a soft sweetness, finishing clean without bitterness.",
+    "QuantityAvailable": 2,
+    "DateRoasted": "2025-08-27"
+  },
+  {
+    "Name": "Colombia Antioquia Amag\u00e1 Supremo",
+    "RoastLevel": "City+",
+    "PackageSize": "250g",
+    "Price": 15,
+    "TastingNotes": "Sweet and lively with citrus brightness, caramelized sugar notes, and a clean finish with hints of almond.",
+    "QuantityAvailable": 2,
+    "DateRoasted": "2025-09-02"
+  },
+  {
+    "Name": "Vietnam Lam Dong Duc Trong",
+    "RoastLevel": "Full City",
+    "PackageSize": "250g",
+    "Price": 15,
+    "TastingNotes": "Smooth and earthy with rich chocolate depth, subtle spice, and a lingering sweetness reminiscent of molasses.",
+    "QuantityAvailable": 4,
+    "DateRoasted": "2025-09-05"
+  },
+  {
+    "Name": "Colombia Supremo EP Huila",
+    "RoastLevel": "City+",
+    "PackageSize": "250g",
+    "Price": 15,
+    "TastingNotes": "Bright and balanced with notes of red apple, caramel sweetness, and a hint of cocoa on the finish.",
+    "QuantityAvailable": 2,
+    "DateRoasted": "2025-09-06"
+  }
+]
