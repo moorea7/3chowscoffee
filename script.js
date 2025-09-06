@@ -19,6 +19,28 @@ function roastMatches(roast, key){
 // Safe element getter
 function el(id){ return document.getElementById(id); }
 
+// Global card factory (used across sections, including Ready Now)
+function mk(c){
+  const card = document.createElement('article');
+  card.className = 'card';
+  const pack = c.pack || '250g bag';
+  const price = c.price || '$15 / 250g';
+  const roast = c.roast ? `<span class="badge">${c.roast}</span>` : '';
+  const origin = c.origin ? `<span class="origin">• ${c.origin}</span>` : '';
+  const category = c.category ? `<span class="badge category">${c.category}</span>` : '';
+  const qtyLine = (c.qty != null) ? `<div class="qty">Qty Available: ${c.qty}</div>` : '';
+
+  card.innerHTML = `
+    <h3>${c.name || ''}</h3>
+    <div class="meta">${roast} ${origin} ${category}</div>
+    ${c.notes ? `<div class="notes">${c.notes}</div>` : ''}
+    <div class="dim">${pack}${c.grind ? ' • ' + c.grind : ''}</div>
+    <div class="price">${price}</div>
+    ${qtyLine}
+  `;
+  return card;
+}
+
 // Render grouped by category
 function renderCoffees(list){
   const soHead = el('so-head');
@@ -55,24 +77,6 @@ function renderCoffees(list){
     }
   }
 
-  const mk = (c) => {
-    const card = document.createElement('article');
-    card.className = 'card';
-    const pack = c.pack || '250g bag';
-    const price = c.price || '$15 / 250g';
-    const roast = c.roast ? `<span class="badge">${c.roast}</span>` : '';
-    const origin = c.origin ? `<span class="origin">• ${c.origin}</span>` : '';
-    const category = c.category ? `<span class="badge category">${c.category}</span>` : '';
-    card.innerHTML = `
-      <h3>${c.name || ''}</h3>
-      <div class="meta">${roast} ${origin} ${category}</div>
-      ${c.notes ? `<div class="notes">${c.notes}</div>` : ''}
-      <div class="dim">${pack}${c.grind ? ' • ' + c.grind : ''}</div>
-      <div class="price">${price}</div>
-    `;
-    return card;
-  };
-
   if(soList.length){
     soHead.hidden = false;
     for(const c of soList){ so.appendChild(mk(c)); soCount++; }
@@ -105,6 +109,7 @@ function applyFilters(){
 }
 
 // Init after DOM ready
+console.info('[ReadyNow] v4 loaded');
 document.addEventListener('DOMContentLoaded', async () => {
   try{
     const res = await fetch('coffees.json', {cache:'no-store'});
@@ -137,31 +142,34 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     });
 
-
     // ---- Ready Now (pre-roasted inventory) ----
     try {
-      const rnRes = await fetch('ready_to_go_coffees.json', { cache: 'no-store' });
+      const rnRes = await fetch('./ready_to_go_coffees.json?v=' + Date.now(), { cache: 'no-store' });
       if (rnRes.ok) {
         const rn = await rnRes.json();
         const rnList = document.getElementById('ready-now-list');
         const rnHead = document.getElementById('ready-now-head');
+        if (rnHead) rnHead.hidden = false;
         if (Array.isArray(rn) && rn.length && rnList) {
           rn.forEach(item => {
             const obj = {
               name: item.Name,
               roast: item.RoastLevel,
-              notes: [item.TastingNotes, `Roasted: ${item.DateRoasted} • Qty: ${item.QuantityAvailable}`].filter(Boolean).join(' \u2022 '),
+              notes: [item.TastingNotes, item.DateRoasted ? `Roasted: ${item.DateRoasted}` : ''].filter(Boolean).join(' \\u2022 '),
               pack: (item.PackageSize ? item.PackageSize + ' bag' : '250g bag'),
               price: (item.Price ? ('$' + item.Price + ' / ' + (item.PackageSize || '250g')) : '$15 / 250g'),
               category: 'Ready Now',
               origin: undefined,
-              available: true
+              available: true,
+              qty: item.QuantityAvailable
             };
             rnList.appendChild(mk(obj));
           });
-          if (rnHead) rnHead.hidden = false;
-        } else {
-          if (rnHead) rnHead.hidden = true;
+        } else if (rnList) {
+          const p = document.createElement('p');
+          p.className = 'muted';
+          p.textContent = 'No Ready Now coffees at the moment — check back soon!';
+          rnList.appendChild(p);
         }
       }
     } catch (e) {
