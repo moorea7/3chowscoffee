@@ -105,6 +105,8 @@ function renderCoffees(list){
 // Combined filters
 
 // Toggle visibility of Ready Now vs Ready to Roast sections
+function fadeIn(el){ if(!el) return; el.classList.remove('fade-in'); void el.offsetWidth; el.classList.add('fade-in'); }
+
 function applyAvailabilityVisibility(){
   const rnHead = el('ready-now-head');
   const rnList = el('ready-now-list');

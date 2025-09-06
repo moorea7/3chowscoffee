@@ -70,3 +70,30 @@ body{margin:0;padding:0;font-family:Inter,system-ui,sans-serif;background:var(--
 .qty { color: var(--muted); font-size: 0.9em; }
 
 .card .dim, .card .price { text-align: right; }
+
+
+/* Spacing & divider between filter rows */
+.filters + .filters {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Active chip highlight */
+.chip-avail[aria-pressed="true"],
+.chip-cat[aria-pressed="true"],
+.chip-roast[aria-pressed="true"] {
+  background: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.12);
+  font-weight: 600;
+}
+
+/* Fade-in animation for section toggles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 180ms ease-out;
+}
+
