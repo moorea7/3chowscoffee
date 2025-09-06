@@ -137,6 +137,38 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     });
 
+
+    // ---- Ready Now (pre-roasted inventory) ----
+    try {
+      const rnRes = await fetch('ready_to_go_coffees.json', { cache: 'no-store' });
+      if (rnRes.ok) {
+        const rn = await rnRes.json();
+        const rnList = document.getElementById('ready-now-list');
+        const rnHead = document.getElementById('ready-now-head');
+        if (Array.isArray(rn) && rn.length && rnList) {
+          rn.forEach(item => {
+            const obj = {
+              name: item.Name,
+              roast: item.RoastLevel,
+              notes: [item.TastingNotes, `Roasted: ${item.DateRoasted} • Qty: ${item.QuantityAvailable}`].filter(Boolean).join(' \u2022 '),
+              pack: (item.PackageSize ? item.PackageSize + ' bag' : '250g bag'),
+              price: (item.Price ? ('$' + item.Price + ' / ' + (item.PackageSize || '250g')) : '$15 / 250g'),
+              category: 'Ready Now',
+              origin: undefined,
+              available: true
+            };
+            rnList.appendChild(mk(obj));
+          });
+          if (rnHead) rnHead.hidden = false;
+        } else {
+          if (rnHead) rnHead.hidden = true;
+        }
+      }
+    } catch (e) {
+      console.warn('Ready Now load failed', e);
+    }
+    // ---- End Ready Now ----
+
     // Initial render
     applyFilters();
   }catch(e){
