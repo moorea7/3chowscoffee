@@ -121,6 +121,36 @@
       "roast": "Full City",
       "notes": "Spiced cocoa, dried fruit, heavy body",
       "category": "Blend",
+      "available": false,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Chow Roma Italiano",
+      "origin": "Blend of Multiple Origins",
+      "roast": "Full City",
+      "notes": "Classic Italian-style espresso blend with bold crema and syrupy body. Rich dark chocolate and cocoa base layered with vanilla, caramel, and honey sweetness. Subtle cedar, spice, and tobacco depth from Sumatra with a hint of citrus and herbal brightness from Vietnam. Long, bittersweet cocoa finish with toffee and sandalwood notes.",
+      "category": "Blend",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Peru Sapa Sunlight",
+      "origin": "Peru",
+      "roast": "City+",
+      "notes": "Bright and balanced cup with notes of honey, caramel, and citrus. Medium body with a clean, sweet finish and gentle fruit acidity.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Peru Quile Smile",
+      "origin": "Peru",
+      "roast": "City+",
+      "notes": "Cane sugar sweetness with layered vanilla, honey, and soft floral tones. Smooth, medium body with a mellow, lingering finish.",
+      "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
