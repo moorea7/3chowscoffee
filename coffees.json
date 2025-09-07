@@ -111,7 +111,7 @@
       "roast": "Full City",
       "notes": "Semi-sweet chocolate, nuts, soft fruit, peppery spice",
       "category": "Single Origin",
-      "available": true,
+      "available": false,
       "pack": "250g bags",
       "price": "$15 / 250g"
     },
