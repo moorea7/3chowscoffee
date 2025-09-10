@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About · Three Chows Coffee Company</title>
+  <meta name="description" content="Our story — early coffee love, Indonesia at the source, small-batch roasting, and the three chow chows who inspired it." />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="images/favicon.ico"/>
+
+  <style>
+/* Scoped styles for the About page to avoid conflicts */
+.about-page .hero { padding: 56px 0 24px; background: linear-gradient(180deg, #fff, #f7f4f1); border-bottom: 1px solid #ece8e4; }
+.about-page .lede { color: #6b6b6b; max-width: 60ch; }
+.about-page .story-section { padding: 36px 0; }
+.about-page .story-section.alt { background: #fff; border-top: 1px solid #eee7e1; border-bottom: 1px solid #eee7e1; }
+.about-page .two-col { display: grid; grid-template-columns: 1fr; gap: 22px; }
+@media (min-width: 800px) { .about-page .two-col { grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: start; } }
+/* Figure hugs image width */
+.about-page .photo {
+  display: inline-block;
+  margin: 0;
+  border: 1px solid #eee7e1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  vertical-align: top;       /* keeps rows tidy when heights differ */
+}
+
+/* Constrain by height only; width follows proportion */
+.about-page .photo img {
+  display: block;
+  max-height: 300px;         /* adjust as needed */
+  width: auto;
+  height: auto;
+}
+
+/* Caption wraps but never makes the box wider than the image */
+.about-page .photo figcaption {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;     /* INCLUDE padding in that width */
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;     /* long words won’t force expansion */
+  overflow-wrap: anywhere;
+}
+.about-page h1 { margin: 0 0 10px; }
+.about-page h2 { margin: 0 0 12px; font-size: 1.35rem; }
+.about-page p { margin: 0 0 12px; }
+.about-page main { padding-bottom: 24px; }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner column">
+      <div class="header-top">
+        <img src="images/logo.png" alt="Three Chows Coffee Company logo" class="logo" onerror="this.style.display='none'">
+        <div class="site-name">Three Chows Coffee Company</div>
+      </div>
+      <nav class="nav-links">
+        <a href="/index.html#menu">Coffees</a>
+        <a href="/index.html#order">How to Order</a>
+        <a href="/index.html#shipping">Shipping</a>
+        <a href="/index.html#contact">Contact</a>
+  <a href="/about.html" aria-current="page">Our Story</a></nav>
+    </div>
+  </header>
+  <main class="about-page">
+    <section class="hero">
+      <div class="wrap">
+        <h1>About Three Chows Coffee Company</h1>
+        <p class="lede">Small-batch coffee, crafted with care — inspired by our family, our city, and our three chow chows.</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="wrap two-col">
+        <div>
+          <h2>My Love of Coffee</h2>
+          <p>My love of coffee started early. Growing up in England, that often meant instant coffee — it was simply what was available. But everything changed once I got to university. There, I discovered <strong>real coffee</strong>, and I dove headfirst into experimenting with every brewing method I could find.</p>
+          <p>I tried everything from <strong>hand-grinding beans</strong> to brewing in a classic <strong>moka pot</strong>, learning how each technique brought out different flavors and textures. Those experiments sparked a curiosity that stayed with me, laying the foundation for what would eventually become my passion for roasting.</p>
+        </div>
+        <figure class="photo">
+          <img src="images/about/moka-and-handgrinder.jpg" alt="Moka pot and hand grinder on a table" />
+          <figcaption>University days: moka pot and hand-ground beans.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-section alt">
+      <div class="wrap two-col">
+        <div>
+          <h2>Early Coffee Work</h2>
+          <p>After university, one of my first jobs was teaching at a college. To help supplement my income, I also worked part-time in a <strong>small coffee shop that roasted its own beans</strong>.</p>
+          <p>That experience was eye-opening — it was the first time I saw coffee taken from green to roasted, and it gave me an inside look at the care and craft that goes into every batch. It was <strong>drilled into me that roasting isn’t just about applying heat — it’s about bringing out the unique character of each bean</strong>.</p>
+          <p>At the same time, I learned how to make <strong>great brewed coffee and espresso</strong>. My mentor insisted that I <strong>pull shot after shot — and taste every one — until the consistency was right</strong>. That discipline trained my palate to recognize balance, nuance, and quality in the cup.</p>
+          <p>Before I ever began roasting myself, <strong>Maria — then early in our relationship — took me to visit coffee farms in her home country of Indonesia</strong>. I was fascinated watching small farms <strong>pick, roast, and sell their coffee to both locals and tourists alike</strong>. Those early visits, and many return trips since, gave me a deep appreciation for coffee at its source and broadened my perspective on its global culture.</p>
+        </div>
+        <figure class="photo">
+          <img src="images/about/espresso-shot.jpg" alt="Espresso being pulled at a bar" />
+          <figcaption>Training by taste: countless shots to learn consistency.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="wrap two-col">
+        <div>
+          <h2>How I Started Roasting</h2>
+          <p>My roasting journey began when I backed an <strong>Indiegogo campaign for the Roma Pro roaster</strong>. At first, I experimented with its automatic modes, but it didn’t take long before I wanted more control. I connected the Roma Pro to <strong>Artisan</strong> to log temperatures and track roast curves in real time.</p>
+          <p>When the Roma Pro went down for repairs, I picked up a <strong>Skywalker roaster</strong>, which runs on <strong>Hibean</strong>. That setup gave me even greater visibility and control, allowing me to fine-tune heat, airflow, and timing with precision.</p>
+          <p>Still to this day, I roast in <strong>small 500-gram batches</strong>, continuing to hone the craft with the same curiosity and care that first drew me in.</p>
+        </div>
+        <figure class="photo">
+          <img src="images/about/roasting-setup.jpg" alt="Roasting setup with Skywalker running Hibean" />
+          <figcaption>Today’s setup: Skywalker + Hibean, small-batch precision.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-section alt">
+      <div class="wrap two-col">
+        <div>
+          <h2>From Hobby to Craft</h2>
+          <p>As I got deeper into roasting, <strong>“better than store” coffee</strong> quickly became the norm. Friends and family didn’t want to wait for gifts — they asked to <strong>buy</strong> my coffee directly. Their encouragement pushed me from hobbyist to small-batch roaster.</p>
+          <p>Along the way, <strong>Maria — my wife, a coffee lover from Indonesia, and chief brand ambassador — brought her business background into the picture</strong>. She championed Three Chows from the beginning: introducing me to Indonesia’s coffee culture, sharing beans with her fellow teachers and friends, and <strong>always reminding me about the sales and marketing side</strong> so this passion could grow.</p>
+        </div>
+        <figure class="photo">
+          <img src="images/about/first-bags.jpg" alt="Hand-filled coffee bags ready for friends and family" />
+          <figcaption>From gifts to first sales — the origin of Three Chows.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="wrap two-col">
+        <div>
+          <h2>The Name: Three Chows</h2>
+          <p>When I met Maria, I quickly fell in love — not only with her, but also with <strong>her chow chows</strong>. Their loyal, dignified (and sometimes stubborn) personalities fit our home perfectly. Over the years we’ve had a few, but our current three — <strong>Cowboy, Bruno, and Riri</strong> — are ever-present. They’re usually right outside the roasting-room door; they know this is something I love to do and want to be there when it’s happening.</p>
+          <p>Naming the venture <strong>Three Chows Coffee Company</strong> felt natural — a tribute to the dogs that bring so much joy to our lives, and to the warmth and companionship coffee represents.</p>
+        </div>
+        <figure class="photo">
+          <img src="images/about/three-chows.jpg" alt="Cowboy, Bruno, and Riri near the roasting room" />
+          <figcaption>The ever-present trio: Cowboy, Bruno, and Riri.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-section philosophy">
+      <div class="wrap">
+        <h2>Roasting Philosophy &amp; Mission</h2>
+        <p>At Three Chows, I believe coffee is at its best when it <strong>expresses the unique character of each bean</strong>. Every roast is guided by both data and intuition — science and craft working together to highlight sweetness, balance, and the story of origin.</p>
+        <p>My mission is simple: to share <strong>fresh, small-batch coffee roasted with care</strong>. Coffee that connects people, sparks joy, and brings the same sense of comfort and companionship as the three chows who inspired its name.</p>
+      </div>
+    </section>
+
+    <section class="story-section alt">
+      <div class="wrap two-col">
+        <div>
+          <h2>Seattle Roots</h2>
+          <p>We live in <strong>Seattle</strong> — a city known for <strong>coffee, beer, the outdoors, and dogs</strong> — the perfect home for Three Chows. The culture here celebrates craft, quality, and community, the same values at the heart of every bag I roast. Whether I’m dialing in a roast curve or heading outside with the dogs, Seattle provides the backdrop that inspires this journey.</p>
+        </div>
+        <figure class="photo">
+          <img src="images/about/seattle-outdoors.jpg" alt="Seattle outdoor scene with coffee and dogs" />
+          <figcaption>Craft, community, and a place that feels like home.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Three Chows Coffee Company · <a href="/index.html">Shop</a> ·</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
