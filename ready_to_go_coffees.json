@@ -1,11 +1,11 @@
 [
   {
-    "Name": "Mysore Muzzle Loader Espresso Blend",
+    "Name": "Furst Bark of the Morning",
     "RoastLevel": "Full City+",
     "PackageSize": "250g",
     "Price": 15,
-    "TastingNotes": "Bold and syrupy with deep cocoa, roasted nut, and warm spice notes, crafted for a rich and crema-heavy espresso shot.",
-    "QuantityAvailable": 2,
+    "TastingNotes": "Bold and syrupy with deep cocoa, roasted nut, and warm spice notes, best for French Press, Drip, or Pour Over. Dark Roast Lovers will enjoy this",
+    "QuantityAvailable": 1,
     "DateRoasted": "2025-08-24",
     "Category": "Blend"
   },
@@ -25,7 +25,7 @@
     "PackageSize": "250g",
     "Price": 15,
     "TastingNotes": "Sweet and lively with citrus brightness, caramelized sugar notes, and a clean finish with hints of almond.",
-    "QuantityAvailable": 1,
+    "QuantityAvailable": 0,
     "DateRoasted": "2025-09-02",
     "Category": "Single Origin"
   },
@@ -35,7 +35,7 @@
     "PackageSize": "250g",
     "Price": 15,
     "TastingNotes": "Smooth and earthy with rich chocolate depth, subtle spice, and a lingering sweetness reminiscent of molasses.",
-    "QuantityAvailable": 4,
+    "QuantityAvailable": 3,
     "DateRoasted": "2025-09-05",
     "Category": "Single Origin"
   },
@@ -56,7 +56,7 @@
     "roast_level": "Full City",
     "bag_size_g": 250,
     "price": 15,
-    "quantity": 3,
+    "quantity": 1,
     "roasted_date": "2025-09-09",
     "available": true,
     "notes": "Espresso blend — dark chocolate, caramel, toasted nuts; syrupy body, low acidity."
