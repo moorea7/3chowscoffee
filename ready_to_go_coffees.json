@@ -26,6 +26,7 @@
     "Price": 15,
     "TastingNotes": "Sweet and lively with citrus brightness, caramelized sugar notes, and a clean finish with hints of almond.",
     "QuantityAvailable": 0,
+    "available": false,
     "DateRoasted": "2025-09-02",
     "Category": "Single Origin"
   },
@@ -48,17 +49,5 @@
     "QuantityAvailable": 2,
     "DateRoasted": "2025-09-06",
     "Category": "Single Origin"
-  },
-  {
-    "name": "Chow Roma Italiano",
-    "origin": "Blend of Multiple Origins",
-    "category": "Blends",
-    "roast_level": "Full City",
-    "bag_size_g": 250,
-    "price": 15,
-    "quantity": 1,
-    "roasted_date": "2025-09-09",
-    "available": true,
-    "notes": "Espresso blend — dark chocolate, caramel, toasted nuts; syrupy body, low acidity."
   }
 ]
