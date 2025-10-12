@@ -1,137 +1,274 @@
-/* Three Chows Coffee Company – script.js (Ready Now availability fix)
-   - Ready Now items now respect both `available` and `QuantityAvailable`.
-   - Nothing else about your site behavior changes.
-*/
+// Global state
+let coffeesCache = [];
+let categoryKey = 'All';
+let availabilityKey = 'All';
+let roastKey = 'All';
+let rnCache = [];
 
-(() => {
-  // ---- Config ----
-  const READY_NOW_URL = "./ready_to_go_coffees.json";
-  const COFFEES_URL   = "./coffees.json"; // kept if other parts of page use it
+// Helpers
+function roastMatches(roast, key){
+  if(!key || key === 'All') return true;
+  if(!roast) return false;
+  const r = String(roast).trim().toLowerCase();
+  const k = key.toLowerCase();
+  if(k === 'city'){ return r === 'city'; }
+  if(k === 'city+'){ return r === 'city+'; }
+  if(k === 'full city'){ return r === 'full city'; }
+  if(k === 'full city+'){ return r === 'full city+'; }
+  return r.includes(k);
+}
 
-  // ---- Caches ----
-  let rnCache = [];
-  let coffeesCache = [];
+// Safe element getter
+function el(id){ return document.getElementById(id); }
 
-  // ---- Utilities ----
-  const byText = (sel) => document.querySelector(sel);
-  const els = {
-    readyNowContainer: byText("#ready-now-list"),
-    readyNowEmpty:     byText("#ready-now-empty"),   // element that shows "No Ready Now coffees…"
-    readyNowSection:   byText("#ready-now-section"), // wrapper section for RN
-  };
+// Global card factory (used across sections, including Ready Now)
+function mk(c){
+  const card = document.createElement('article');
+  card.className = 'card';
+  const pack = c.pack || '250g bag';
+  const price = c.price || '$15 / 250g';
+  const roast = c.roast ? `<span class="badge">${c.roast}</span>` : '';
+  const origin = c.origin ? `<span class="origin">• ${c.origin}</span>` : '';
+  const category = c.category ? `<span class="badge category">${c.category}</span>` : '';
+  const cat2 = c.category2 ? `<span class="badge category">${c.category2}</span>` : '';
+  const qtyLine = (c.qty != null) ? '<div class="dim qty">Qty Available: ' + c.qty + '</div>' : '';
+  const roastDateLine = c.roastDate ? '<div class="dim roast-date">' + c.roastDate + '</div>' : '';
 
-  // Normalize truthy strings like "true"/"false"
-  const toBool = (v) => (typeof v === "string" ? v.toLowerCase() === "true" : !!v);
+  card.innerHTML = `
+    <h3>${c.name || ''}</h3>
+    <div class="meta">${roast} ${origin} ${category} ${cat2}</div>
+    ${c.notes ? `<div class="notes">${c.notes}</div>` : ''}
+    <div class="dim">
+    ${pack}${c.grind ? ' • ' + c.grind : ''}</div>
+    ${roastDateLine}
+    ${qtyLine}
+    <div class="price">${price}</div>
+  `;
+  return card;
+}
 
-  // Compute availability for Ready Now records safely
-  function computeReadyNowAvailability(item) {
-    const declared = toBool(item.available); // honor explicit flag
-    const qty = Number(item.QuantityAvailable ?? item.quantityAvailable ?? item.qty ?? 0);
-    return declared && qty > 0;
+// Render grouped by category for coffees.json
+function renderCoffees(list){
+  const soHead = el('so-head');
+  const blendHead = el('blend-head');
+  const so = el('coffee-list-so');
+  const blend = el('coffee-list-blend');
+  const empty = el('empty-state');
+
+  if(!so || !blend || !soHead || !blendHead){
+    console.error('Missing coffee list containers in HTML.');
+    return;
   }
 
-  // Build a Ready Now card (keep markup simple & robust)
-  function readyNowCard(c) {
-    // Expect fields like: Name, RoastLevel, NetWeight, Price, RoastDate, QuantityAvailable, Image, etc.
-    const img = c.Image || c.image || "logo.png";
-    const roast = c.RoastLevel || c.roast || "";
-    const weight = c.NetWeight || c.Weight || c.weight || "";
-    const price = c.Price ?? c.price ?? "";
-    const roastDate = c.RoastDate || c.roastDate || "";
-    const qty = c.QuantityAvailable ?? c.quantityAvailable ?? 0;
+  so.innerHTML = '';
+  blend.innerHTML = '';
+  let soCount = 0, blendCount = 0;
 
-    return `
-      <article class="coffee-card rn-card">
-        <div class="coffee-card-media">
-          <img src="${img}" alt="${c.Name || c.name || "Coffee"}" loading="lazy">
-        </div>
-        <div class="coffee-card-body">
-          <h3 class="coffee-name">${c.Name || c.name || "Coffee"}</h3>
-          <div class="coffee-meta">
-            ${roast ? `<span class="pill">${roast}</span>` : ""}
-            ${weight ? `<span class="pill">${weight}</span>` : ""}
-            ${roastDate ? `<span class="pill">Roasted: ${roastDate}</span>` : ""}
-            <span class="pill">Qty: ${qty}</span>
-          </div>
-          ${price !== "" ? `<div class="coffee-price">$${price}</div>` : ""}
-        </div>
-      </article>
-    `;
+  const available = list || [];
+  if(!available.length){
+    if(empty) empty.hidden = false;
+    soHead.hidden = true; blendHead.hidden = true;
+    return;
   }
+  if(empty) empty.hidden = true;
 
-  // Render Ready Now list (already filtered)
-  function renderReadyNow(list) {
-    if (!els.readyNowContainer || !els.readyNowSection) return;
-
-    if (!list || list.length === 0) {
-      els.readyNowContainer.innerHTML = "";
-      if (els.readyNowEmpty) els.readyNowEmpty.style.display = "block";
-      els.readyNowSection.style.display = ""; // keep section; just show empty-state message
-      return;
+  const soList = [];
+  const blendList = [];
+  for(const c of available){
+    const cat = ((c && c.category) ? c.category : 'Single Origin').toLowerCase();
+    if(cat === 'blend' || cat === 'blends'){
+      blendList.push(c);
+    }else{
+      soList.push(c);
     }
-
-    const html = list.map(readyNowCard).join("");
-    els.readyNowContainer.innerHTML = html;
-    if (els.readyNowEmpty) els.readyNowEmpty.style.display = "none";
-    els.readyNowSection.style.display = "";
   }
 
-  // Apply any RN filters (extend if you later add UI filters)
-  function applyReadyNowFilters() {
-    // Start with cache clone
-    let rnListFiltered = rnCache.slice();
-
-    // *** CRITICAL FIX: filter by computed availability ***
-    rnListFiltered = rnListFiltered.filter((c) => c && c.available === true);
-
-    renderReadyNow(rnListFiltered);
+  if(soList.length){
+    soHead.hidden = false;
+    for(const c of soList){ so.appendChild(mk(c)); soCount++; }
+  }else{
+    soHead.hidden = true;
   }
 
-  // Load JSON helpers
-  async function loadJSON(url) {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
-    return res.json();
+  if(blendList.length){
+    blendHead.hidden = false;
+    for(const c of blendList){ blend.appendChild(mk(c)); blendCount++; }
+  }else{
+    blendHead.hidden = true;
   }
 
-  // Initialize Ready Now
-  async function initReadyNow() {
+  if(!soCount && !blendCount){
+    if(empty) empty.hidden = false;
+  }
+}
+
+// Combined filters
+
+// Toggle visibility of Ready Now vs Ready to Roast sections
+function fadeIn(el){ if(!el) return; el.classList.remove('fade-in'); void el.offsetWidth; el.classList.add('fade-in'); }
+
+function applyAvailabilityVisibility(){
+  const rnHead = el('ready-now-head');
+  const rnList = el('ready-now-list');
+  const rtrHead = el('rtr-head');
+  const soHead = el('so-head');
+  const blendHead = el('blend-head');
+  const so = el('coffee-list-so');
+  const blend = el('coffee-list-blend');
+
+  const showRN = (availabilityKey === 'All' || availabilityKey === 'Ready Now');
+  const showRTR = (availabilityKey === 'All' || availabilityKey === 'Ready to Roast');
+
+  [rnHead, rnList].forEach(n => { if(n){ n.style.display = showRN ? '' : 'none'; }});
+  [rtrHead, soHead, blendHead, so, blend].forEach(n => { if(n){ n.style.display = showRTR ? '' : 'none'; }});
+}
+
+
+// Render Ready Now cards from a list of mapped objects
+function renderReadyNow(list){
+  const rnList = el('ready-now-list');
+  const rnHead = el('ready-now-head');
+  if(!rnList || !rnHead) return;
+  rnList.innerHTML = '';
+  if(Array.isArray(list) && list.length){
+    rnHead.hidden = false;
+    list.forEach(obj => rnList.appendChild(mk(obj)));
+  }else{
+    rnHead.hidden = false; // keep header visible when filtering to zero results
+    const p = document.createElement('p');
+    p.className = 'muted';
+    p.textContent = 'No Ready Now coffees match the current filters.';
+    rnList.appendChild(p);
+  }
+}
+
+function applyFilters(){
+
+  let list = coffeesCache.slice().filter(c => c && c.available === true);
+  if(roastKey !== 'All'){
+    list = list.filter(c => roastMatches(c.roast || '', roastKey));
+  }
+  if(categoryKey !== 'All'){
+    if(categoryKey === 'Ready to Roast'){
+      // All non-ready-now items
+      list = list.filter(c => (String(c.category || '')).toLowerCase() !== 'ready now');
+    }else{
+      list = list.filter(c => (c.category || 'Single Origin').toLowerCase() === categoryKey.toLowerCase());
+    }
+  }
+    // Apply same roast/type filters to Ready Now cache
+  let rnListFiltered = rnCache.slice();
+        rnListFiltered = rnListFiltered.filter(c => c && c.available === true);
+  if(roastKey !== 'All'){
+    rnListFiltered = rnListFiltered.filter(c => roastMatches(c.roast || '', roastKey));
+  }
+  if(categoryKey !== 'All'){
+    rnListFiltered = rnListFiltered.filter(c => (c.category2 || 'Single Origin').toLowerCase().replace('blends','blend') === categoryKey.toLowerCase().replace('blends','blend'));
+  }
+  renderReadyNow(rnListFiltered);
+  renderCoffees(list);
+
+  applyAvailabilityVisibility();
+}
+
+// Init after DOM ready
+console.info('[ReadyNow] v5 loaded');
+document.addEventListener('DOMContentLoaded', async () => {
+  try{
+    const res = await fetch('coffees.json', {cache:'no-store'});
+    const data = await res.json();
+    coffeesCache = (data.coffees || []).filter(Boolean);
+
+    // Wire Venmo button in Order section
+    const venmo = data.venmo || {};
+    const url = venmo.url || (venmo.username ? `https://venmo.com/u/${String(venmo.username).replace(/^@/, '')}` : null);
+    const orderBtn = el('venmo-link-order');
+    if(url && orderBtn){ orderBtn.href = url; }
+
+    // Setup filter chips
+    // Availability chips
+    const availChips = [...document.querySelectorAll('.chip-avail')];
+    availChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        availChips.forEach(c => c.setAttribute('aria-pressed', String(c===chip)));
+        availabilityKey = chip.dataset.avail;
+        applyFilters();
+      });
+    });
+    const roastChips = [...document.querySelectorAll('.chip-roast')];
+    const catChips = [...document.querySelectorAll('.chip-cat')];
+
+    roastChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        roastChips.forEach(c => c.setAttribute('aria-pressed', String(c===chip)));
+        roastKey = chip.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    catChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        catChips.forEach(c => c.setAttribute('aria-pressed', String(c===chip)));
+        categoryKey = chip.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    // ---- Ready Now (pre-roasted inventory) ----
     try {
-      const data = await loadJSON(READY_NOW_URL);
+      const rnRes = await fetch('./ready_to_go_coffees.json?v=' + Date.now(), { cache: 'no-store' });
+      if (rnRes.ok) {
+        const rn = await rnRes.json();
+        const rnList = document.getElementById('ready-now-list');
+        const rnHead = document.getElementById('ready-now-head');
+        if (rnHead) rnHead.hidden = false;
+        if (Array.isArray(rn) && rn.length && rnList) {
+          rnCache = rn.map(item => {
+          const cat = item.Category || (/(?:^|\s)blend/i.test(item.Name) ? 'Blend' : 'Single Origin');
+          return {
+            name: item.Name,
+            roast: item.RoastLevel,
+            notes: item.TastingNotes || '',
+            roastDate: item.DateRoasted ? 'Roasted: ' + item.DateRoasted : '',
+            pack: (item.PackageSize ? item.PackageSize + ' bag' : '250g bag'),
+            price: (item.Price ? ('$' + item.Price + ' / ' + (item.PackageSize || '250g')) : '$15 / 250g'),
+            category: 'Ready Now',
+            category2: cat,
+            origin: undefined,
+            available: ((String(item.available).toLowerCase() === 'true') && (Number(item.QuantityAvailable || 0) > 0)),
+            qty: Number(item.QuantityAvailable || 0),
+            qty: item.QuantityAvailable
+          };
+        });
+        // Render Ready Now now with current roast/type filters
+        let rnListFiltered = rnCache.slice();
+        rnListFiltered = rnListFiltered.filter(c => c && c.available === true);
+        if(roastKey !== 'All'){
+          rnListFiltered = rnListFiltered.filter(c => roastMatches(c.roast || '', roastKey));
+        }
+        if(categoryKey !== 'All'){
+          rnListFiltered = rnListFiltered.filter(c => (c.category2 || 'Single Origin').toLowerCase().replace('blends','blend') === categoryKey.toLowerCase().replace('blends','blend'));
+        }
+        renderReadyNow(rnListFiltered);
 
-      // Map and compute availability safely; do NOT force to true
-      rnCache = (Array.isArray(data) ? data : data?.coffees || data?.items || [])
-        .filter(Boolean)
-        .map((item) => ({
-          ...item,
-          available: computeReadyNowAvailability(item),
-        }));
-
-      applyReadyNowFilters();
-    } catch (err) {
-      console.error("[Ready Now] load error:", err);
-      // Fall back to showing empty message
-      if (els.readyNowContainer) els.readyNowContainer.innerHTML = "";
-      if (els.readyNowEmpty) els.readyNowEmpty.style.display = "block";
-      if (els.readyNowSection) els.readyNowSection.style.display = "";
+        } else if (rnList) {
+          const p = document.createElement('p');
+          p.className = 'muted';
+          p.textContent = 'No Ready Now coffees at the moment — check back soon!';
+          rnList.appendChild(p);
+        }
+      }
+    } catch (e) {
+      console.warn('Ready Now load failed', e);
     }
-  }
+    // ---- End Ready Now ----
 
-  // (Optional) Load main coffees if your page expects it elsewhere
-  async function initCoffees() {
-    try {
-      const data = await loadJSON(COFFEES_URL);
-      coffeesCache = (Array.isArray(data) ? data : data?.coffees || data?.items || []).filter(Boolean);
-      // Your existing rendering/filtering for the main list can run here.
-      // This file focuses on the Ready Now fix.
-    } catch (err) {
-      console.warn("[Coffees] load warning:", err);
-    }
-  }
+    // Apply initial visibility based on availabilityKey
+    applyAvailabilityVisibility();
 
-  // Kickoff
-  document.addEventListener("DOMContentLoaded", async () => {
-    await Promise.allSettled([initReadyNow(), initCoffees()]);
-    // If you have filter controls that affect Ready Now, wire them to call applyReadyNowFilters()
-  });
-})();
+    // Initial render
+    applyFilters();
+  }catch(e){
+    console.error(e);
+  }
+});
