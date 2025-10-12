@@ -25,7 +25,6 @@ function el(id){ return document.getElementById(id); }
 function mk(c){
   const card = document.createElement('article');
   card.className = 'card';
-  const pack = c.pack || '250g bag';
   const price = c.price || '$15 / 250g';
   const roast = c.roast ? `<span class="badge">${c.roast}</span>` : '';
   const origin = c.origin ? `<span class="origin">• ${c.origin}</span>` : '';
@@ -39,9 +38,9 @@ function mk(c){
     <div class="meta">${roast} ${origin} ${category} ${cat2}</div>
     ${c.notes ? `<div class="notes">${c.notes}</div>` : ''}
     <div class="dim">
-    ${pack}${c.grind ? ' • ' + c.grind : ''}</div>
     ${roastDateLine}
     ${qtyLine}
+    </div>
     <div class="price">${price}</div>
   `;
   return card;
@@ -230,14 +229,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             roast: item.RoastLevel,
             notes: item.TastingNotes || '',
             roastDate: item.DateRoasted ? 'Roasted: ' + item.DateRoasted : '',
-            pack: (item.PackageSize ? item.PackageSize + ' bag' : '250g bag'),
             price: (item.Price ? ('$' + item.Price + ' / ' + (item.PackageSize || '250g')) : '$15 / 250g'),
             category: 'Ready Now',
             category2: cat,
             origin: undefined,
             available: ((String(item.available).toLowerCase() === 'true') && (Number(item.QuantityAvailable || 0) > 0)),
-            qty: Number(item.QuantityAvailable || 0),
-            qty: item.QuantityAvailable
+            qty: Number(item.QuantityAvailable || 0)
           };
         });
         // Render Ready Now now with current roast/type filters
