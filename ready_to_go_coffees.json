@@ -8,7 +8,7 @@
     "QuantityAvailable": 0,
     "DateRoasted": "2025-08-24",
     "Category": "Blend",
-    "Available": false
+    "available": false
   },
   {
     "Name": "Colombia Royal Select MWP Decaf",
@@ -19,7 +19,7 @@
     "QuantityAvailable": 0,
     "DateRoasted": "2025-08-27",
     "Category": "Single Origin",
-    "Available": false
+    "available": false
   },
   {
     "Name": "Colombia Antioquia Amag\u00e1 Supremo",
@@ -41,7 +41,7 @@
     "QuantityAvailable": 0,
     "DateRoasted": "2025-09-05",
     "Category": "Single Origin",
-    "Available": false
+    "available": false
   },
   {
     "Name": "Colombia Supremo EP Huila",
@@ -52,6 +52,6 @@
     "QuantityAvailable": 0,
     "DateRoasted": "2025-09-06",
     "Category": "Single Origin",
-    "Available": false
+    "available": false
   }
 ]
