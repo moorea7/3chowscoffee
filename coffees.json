@@ -16,22 +16,42 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Colombia Decaf Royal Select MWP",
+      "name": "Decaffeinated Columbia Royal Select MWP",
       "origin": "Colombia",
       "roast": "Full City",
-      "notes": "Decaf with chocolatey notes; Mountain Water Process retains flavor.",
+      "notes": "Chocolatey sweetness with gentle fruit and nutty tones; Mountain Water Process.",
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
     },
     {
-      "name": "Colombia Huila",
-      "origin": "Colombia",
-      "roast": "City+",
-      "notes": "Caramel, citrus, clean finish",
+      "name": "Decaffeinated Indian Monsooned Malabar MWP",
+      "origin": "India",
+      "roast": "Full City",
+      "notes": "Spicy cocoa sweetness with mellow acidity and heavy body; Monsooned and Mountain Water Process.",
       "category": "Single Origin",
-      "available": false,
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Decaffeinated Indonesia Sumatra Mandheiling MWP",
+      "origin": "Indonesia",
+      "roast": "Full City",
+      "notes": "Earthy cocoa, cedar, and sweet tobacco notes with syrupy body; Mountain Water Process.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
+      "name": "Decaffeinated Brazil Mogiana 15/16 Royal Select SWP",
+      "origin": "Brazil",
+      "roast": "Full City",
+      "notes": "Creamy body with milk chocolate, toasted sugar, and nutty sweetness; Royal Select Swiss Water Process.",
+      "category": "Single Origin",
+      "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
     },
@@ -60,16 +80,6 @@
       "origin": "India",
       "roast": "Full City",
       "notes": "Spicy chocolate notes, syrupy body; prized Indian arabica.",
-      "category": "Single Origin",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g"
-    },
-    {
-      "name": "Sumatra Bener Meriah",
-      "origin": "Indonesia",
-      "roast": "Full City+",
-      "notes": "Earthy, dark chocolate, cedar",
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
@@ -106,41 +116,11 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Vietnam Lam Dong Duc Trong Mill Washed",
-      "origin": "Vietnam",
-      "roast": "Full City",
-      "notes": "Semi-sweet chocolate, nuts, soft fruit, peppery spice",
-      "category": "Single Origin",
-      "available": false,
-      "pack": "250g bags",
-      "price": "$15 / 250g"
-    },
-    {
-      "name": "Mysore Muzzle Loader Espresso Blend",
-      "origin": "Blend of Multiple Origins",
-      "roast": "Full City",
-      "notes": "Spiced cocoa, dried fruit, heavy body",
-      "category": "Blend",
-      "available": false,
-      "pack": "250g bags",
-      "price": "$15 / 250g"
-    },
-    {
       "name": "Chow Roma Italiano",
       "origin": "Blend of Multiple Origins",
       "roast": "Full City",
       "notes": "Classic Italian-style espresso blend with bold crema and syrupy body. Rich dark chocolate and cocoa base layered with vanilla, caramel, and honey sweetness. Subtle cedar, spice, and tobacco depth from Sumatra with a hint of citrus and herbal brightness from Vietnam. Long, bittersweet cocoa finish with toffee and sandalwood notes.",
       "category": "Blend",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g"
-    },
-    {
-      "name": "Peru Sapa Sunlight",
-      "origin": "Peru",
-      "roast": "City+",
-      "notes": "Bright and balanced cup with notes of honey, caramel, and citrus. Medium body with a clean, sweet finish and gentle fruit acidity.",
-      "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
