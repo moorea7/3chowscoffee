@@ -126,6 +126,16 @@
       "price": "$15 / 250g"
     },
     {
+      "name": "Doghouse Espresso",
+      "origin": "Blend of Multiple Origins",
+      "roast": "Full City",
+      "notes": "Post-roast espresso blend with dense crema and syrupy body. Deep dark chocolate core with molasses and toasted sugar sweetness. Warming cedar spice and sweet tobacco depth lifted by a bright ribbon of candied citrus. Long, cocoa-rich finish with hints of vanilla and caramelized almond.",
+      "category": "Blend",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
       "name": "Peru Quile Smile",
       "origin": "Peru",
       "roast": "City+",
