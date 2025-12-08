@@ -11,7 +11,7 @@
       "roast": "City+",
       "notes": "Sweet, nutty, and smooth cup; medium body and acidity.",
       "category": "Single Origin",
-      "available": true,
+      "available": false,
       "pack": "250g bags",
       "price": "$15 / 250g"
     },
@@ -141,7 +141,7 @@
       "roast": "City+",
       "notes": "Cane sugar sweetness with layered vanilla, honey, and soft floral tones. Smooth, medium body with a mellow, lingering finish.",
       "category": "Single Origin",
-      "available": true,
+      "available": false,
       "pack": "250g bags",
       "price": "$15 / 250g"
     }
