@@ -106,21 +106,21 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Peru Finca La Esperanza RFA",
+      "name": "Peru Chirapa Shade",
       "origin": "Peru",
-      "roast": "Full City",
-      "notes": "Chocolate & cherry, toasty, nutty sweet aroma; citrus, malt, pine, semi-sweet chocolate finish; full body, low acidity, balanced and lingering; baker’s cocoa, tangerine, peach, almond finish.",
+      "roast": "City+",
+      "notes": "Clean apple, sweet cocoa nibs, and a rich, bready malt background. Mellow finish with a hint of tobacco. Soft body and soft acidity for an approachable, consistent cup.",
       "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
     },
     {
-      "name": "Chow Roma Italiano",
-      "origin": "Blend of Multiple Origins",
+      "name": "Peru Finca La Esperanza RFA",
+      "origin": "Peru",
       "roast": "Full City",
-      "notes": "Classic Italian-style espresso blend with bold crema and syrupy body. Rich dark chocolate and cocoa base layered with vanilla, caramel, and honey sweetness. Subtle cedar, spice, and tobacco depth from Sumatra with a hint of citrus and herbal brightness from Vietnam. Long, bittersweet cocoa finish with toffee and sandalwood notes.",
-      "category": "Blend",
+      "notes": "Chocolate & cherry, toasty, nutty sweet aroma; citrus, malt, pine, semi-sweet chocolate finish; full body, low acidity, balanced and lingering; baker’s cocoa, tangerine, peach, almond finish.",
+      "category": "Single Origin",
       "available": true,
       "pack": "250g bags",
       "price": "$15 / 250g"
