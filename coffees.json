@@ -106,6 +106,16 @@
       "price": "$15 / 250g"
     },
     {
+      "name": "Peru Chirapa Shade",
+      "origin": "Peru",
+      "roast": "City+",
+      "notes": "Clean apple, sweet cocoa nibs, and a rich, bready malt background. Mellow finish with a hint of tobacco. Soft body and soft acidity for an approachable, consistent cup.",
+      "category": "Single Origin",
+      "available": true,
+      "pack": "250g bags",
+      "price": "$15 / 250g"
+    },
+    {
       "name": "Peru Finca La Esperanza RFA",
       "origin": "Peru",
       "roast": "Full City",
