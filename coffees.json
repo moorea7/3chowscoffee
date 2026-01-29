@@ -126,16 +126,6 @@
       "price": "$15 / 250g"
     },
     {
-      "name": "Chow Roma Italiano",
-      "origin": "Blend of Multiple Origins",
-      "roast": "Full City",
-      "notes": "Classic Italian-style espresso blend with bold crema and syrupy body. Rich dark chocolate and cocoa base layered with vanilla, caramel, and honey sweetness. Subtle cedar, spice, and tobacco depth from Sumatra with a hint of citrus and herbal brightness from Vietnam. Long, bittersweet cocoa finish with toffee and sandalwood notes.",
-      "category": "Blend",
-      "available": true,
-      "pack": "250g bags",
-      "price": "$15 / 250g"
-    },
-    {
       "name": "Doghouse Espresso",
       "origin": "Blend of Multiple Origins",
       "roast": "Full City",
